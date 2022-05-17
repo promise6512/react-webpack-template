@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "hjp <2523863783@qq.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^5.72.1"
+  }
 }
