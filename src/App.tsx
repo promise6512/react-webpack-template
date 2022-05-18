@@ -1,12 +1,9 @@
-import React, {useState} from "react";
-import ReactDOM from "react-dom/client";
-import App from './App.jsx'
-import "./index.less";
-import logo from "./logo.svg";
-import "./App.less";
+import React,{ useState } from 'react'
+import logo from './logo.svg'
+import './App.less'
 
-/* function App() {
-  const [count, setCount] = useState(0);
+function App() {
+  const [count, setCount] = useState<number>(0)
 
   return (
     <div className="App">
@@ -14,7 +11,7 @@ import "./App.less";
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Vite + React!</p>
         <p>
-          <button type="button" onClick={() => setCount(count => count + 1)}>
+          <button type="button" onClick={() => setCount((count) => count + 1)}>
             count is: {count}
           </button>
         </p>
@@ -30,7 +27,7 @@ import "./App.less";
           >
             Learn React
           </a>
-          {" | "}
+          {' | '}
           <a
             className="App-link"
             href="https://vitejs.dev/guide/features.html"
@@ -42,11 +39,7 @@ import "./App.less";
         </p>
       </header>
     </div>
-  );
-} */
+  )
+}
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-      <App></App>
-  </React.StrictMode>
-);
+export default App

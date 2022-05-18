@@ -8,10 +8,13 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const resolvePath = _path => path.resolve(__dirname, _path);
 
 const baseConfig = {
-  entry: resolvePath("../src/index.jsx"),
+  entry: resolvePath("../src/index.tsx"),
   output: {
     path: resolvePath("../dist"),
     filename: "[name].bundle.js"
+  },
+  resolve: {
+    extensions: [".js", ".ts", ".jsx", ".tsx"]
   },
   module: {
     rules: [
@@ -29,7 +32,7 @@ const baseConfig = {
         ]
       },
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         use: "babel-loader"
       },
       {
@@ -48,9 +51,7 @@ const baseConfig = {
     new CleanWebpackPlugin()
   ],
   optimization: {
-    minimizer: [
-      new CssMinimizerPlugin()
-    ]
+    minimizer: [new CssMinimizerPlugin()]
   }
 };
 
