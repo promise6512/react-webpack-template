@@ -1,6 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
@@ -11,7 +10,8 @@ const baseConfig = {
   entry: resolvePath("../src/index.tsx"),
   output: {
     path: resolvePath("../dist"),
-    filename: "[name].bundle.js"
+    filename: "[name].bundle.js",
+    clean: true
   },
   resolve: {
     extensions: [".js", ".ts", ".jsx", ".tsx"]
@@ -47,8 +47,7 @@ const baseConfig = {
       template: resolvePath("../public/index.html"),
       filename: "index.html"
     }),
-    new MiniCssExtractPlugin(),
-    new CleanWebpackPlugin()
+    new MiniCssExtractPlugin()
   ],
   optimization: {
     minimizer: [new CssMinimizerPlugin()]
